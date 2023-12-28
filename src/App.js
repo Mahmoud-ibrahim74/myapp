@@ -1,38 +1,27 @@
 import Test, { x } from "./test";
 import './App.css';
-import Card from "./components/Card";
-import Alert from "./components/Alert"
-import SearchBar from "./components/SearchBar";
 
+import SearchBar from "./components/SearchBar";
+import Header from "./components/Header";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import NotFound from "./components/NotFound";
+import Home from "./components/Home";
 function App() {
-  const cards = [
-    { title: "The Shawshank Redemption" },
-    { title: "The Godfather" },
-    { title: "The Dark Knight" },
-    { title: "Pulp Fiction" },
-    { title: "The Lord of the Rings: The Return of the King" }  ,
-    { title: "Inception" },
-    { title: "Schindler's List" },
-    { title: "Forrest Gump" },
-    { title: "The Matrix" },
-  ]
-  const DisplayAlert = () => {
-    alert("This Films is");
-  }
+
   return (
     <div className="App">
-      <div className="searchBar">
-        <SearchBar></SearchBar>
-      </div>
-      <div className="Container">{
-        cards.length >= 1 ? (
-          cards.map((e) => {
-            return (
-              <Card cardTitle={e.title} click={DisplayAlert} />
-            )
-          })) : <Alert />
+      <>
+      <BrowserRouter>
+       <Routes>
+            <Route path="/header" element={<Header/>} />
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound></NotFound>}/>   {/*if  path doesn't exsit return NotFound */}
+       </Routes>
+      </BrowserRouter>
 
-      }</div>
+        <SearchBar></SearchBar>
+      </>
+
     </div>
   );
 }
