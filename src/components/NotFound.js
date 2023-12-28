@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './NotFound.css';
 const NotFound = () => {
   return (
@@ -12,6 +13,7 @@ const NotFound = () => {
             ... Back to previous page
         </p>
         <a href="/" class="back">... Back to previous page</a>
+        <Link to="/"></Link>  {/* this component at the same <a> above*/}
     </div>
 </div>
   )

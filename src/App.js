@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
        <Routes>
             <Route path="/header" element={<Header/>} />
-            <Route index element={<Home />} />
+            <Route index element={<Home />} /> {/* return to default page index */}
             <Route path="*" element={<NotFound></NotFound>}/>   {/*if  path doesn't exsit return NotFound */}
        </Routes>
       </BrowserRouter>
