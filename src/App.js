@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import Test, { x } from "./test";
 import './App.css';
+import Card from "./components/Card";
+import Alert from "./components/Alert"
+import SearchBar from "./components/SearchBar";
 
 function App() {
+  const cards = [
+    { title: "The Shawshank Redemption" },
+    { title: "The Godfather" },
+    { title: "The Dark Knight" },
+    { title: "Pulp Fiction" },
+    { title: "The Lord of the Rings: The Return of the King" }  ,
+    { title: "Inception" },
+    { title: "Schindler's List" },
+    { title: "Forrest Gump" },
+    { title: "The Matrix" },
+  ]
+  const DisplayAlert = () => {
+    alert("This Films is");
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="searchBar">
+        <SearchBar></SearchBar>
+      </div>
+      <div className="Container">{
+        cards.length >= 1 ? (
+          cards.map((e) => {
+            return (
+              <Card cardTitle={e.title} click={DisplayAlert} />
+            )
+          })) : <Alert />
+
+      }</div>
     </div>
   );
 }

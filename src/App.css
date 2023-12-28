@@ -1,32 +1,146 @@
+body
+{
+  background-color: #282c34;
+
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+.Container
+{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+.content
+{
+  width: 25%;
+  height: 600px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  position: relative;
+}
+.content > p
+{
+ font-size: 30px;
+ font-weight: bolder;
+ color: azure;
+ position: absolute;
+ top: 0%;
+ left: 0;
+ transform: translate(0%, 0%);
+ width: 100%;
+}
+.filmCover
+{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  filter: blur(3px);
+  object-fit: cover;
+
+}
+.alert
+{
+  color: bisque;
+  font-size: 30px;
+}
+.btn {
   color: white;
+  padding: .75rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 80%;
+  left: 30%;
+  transform: translate(0%, 0%);
 }
 
-.App-link {
-  color: #61dafb;
+.btn-intermediate {
+  background: linear-gradient(to right, #FF416C, #FF4B2B);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Rubik+Vinyl&display=swap');
+  .searchBar
+  {
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+  }
+.darksoul-search-bar
+{
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    border-radius: 0% 30px 30px 30px;
+    transition: width 1s;
+    box-shadow: 5px 5px 20px #d8e6fd, -5px -5px 30px white;
+
+}
+.search-icon
+{
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 5px;
+    margin-right: auto;
+    border-radius: 50%;
+}
+.darksoul-search-bar:hover
+{
+    width: 400px;
+    border-radius:  0% 30px 30px 30px;
+}
+.darksoul-search-input
+{
+    margin: auto;
+    display: none;
+    transition: display 12s;
+    outline: none;
+    border: none;
+    font-family: 'Belanosima', sans-serif;
+    border-radius: 25px;
+    padding-left: 10px;
+}
+.darksoul-search-bar:hover .darksoul-search-input
+{
+    display: inline-flex;
+    width: 78%;
+    height: 70%;
+}
+input[type="submit"]
+{
+    display: none;
+}
+@media only screen and (max-width: 600px) 
+{
+    .darksoul-search-bar:hover
+    {
+        width: 80%;
+        border-radius:  0% 30px 30px 15px;
+    }
+}
+
+
 
 @keyframes App-logo-spin {
   from {
