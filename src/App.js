@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import Home from "./components/Home";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [count, setCount] = useState(1);
@@ -18,12 +18,20 @@ function App() {
   const handleDecrement = () => {
     setCount(count - 1);
   };
+ useEffect(()=>{
+  console.log("Test");
+ },[]) // in this case of useEffect print Test only one , With One Render 
+
+//  useEffect(()=>{
+//   console.log("Test");
+//  }); // in this case of useEffect print Test with each render on page 
+
 
   return (
     <div className="App">
       <p>{count}</p>
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={handleDecrement}>-</button>
+      <button onMouseDown={handleIncrement}>+</button>
+      <button onMouseDown={handleDecrement}>-</button>
       
       <>
         <BrowserRouter>
