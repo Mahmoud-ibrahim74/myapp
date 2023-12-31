@@ -1,6 +1,6 @@
 import Test, { x } from "./test";
 import './App.css';
-
+import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -8,8 +8,12 @@ import NotFound from "./components/NotFound";
 import Home from "./components/Home";
 import { createContext, useEffect, useRef, useState } from "react";
 export const alertMe = createContext();
-
 function App() {
+  const feax = async()=>{
+    const result = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+    console.log(result.data);
+  }
+  feax();
   const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
@@ -43,7 +47,7 @@ function App() {
  
   return (
     <div className="App">
-      <alertMe.Provider value="alert Me"></alertMe.Provider>
+      <h1></h1>
       <p>{count}</p>
       <button onMouseDown={handleIncrement}>+</button>
       <button onMouseDown={handleDecrement}>-</button>
